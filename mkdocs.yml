@@ -1,0 +1,51 @@
+site_name: Enterprise AI Document Platform
+site_description: Architecture handbook and reference implementation for an Azure multi-agent document processing platform
+repo_url: https://github.com/AdamJerbi/ai_agent_principles
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - content.code.copy
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+nav:
+  - Home: index.md
+  - Introduction:
+      - Vision: introduction/vision.md
+      - Requirements: introduction/requirements.md
+      - Principles: introduction/architecture-principles.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - C4 Context: architecture/c4-context.md
+      - C4 Container: architecture/c4-container.md
+      - C4 Component: architecture/c4-component.md
+      - Sequences: architecture/sequences.md
+  - Azure:
+      - Overview: azure/overview.md
+      - Services: azure/services.md
+      - Service Bus: azure/service-bus.md
+      - Redis: azure/redis.md
+  - LangGraph:
+      - Workflow: langgraph/workflow.md
+      - Orchestrator: langgraph/orchestrator.md
+  - Agents:
+      - Overview: agents/overview.md
+      - Extraction: agents/extraction.md
+      - Comparison: agents/comparison.md
+      - Annotation: agents/annotation.md
+  - MCP:
+      - Overview: mcp/overview.md
+      - Tool Design: mcp/tool-design.md
+  - Operations:
+      - Observability: operations/observability.md
+      - Scaling: operations/scaling.md
+      - Failure Handling: operations/failure-handling.md
