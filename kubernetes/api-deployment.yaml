@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: document-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: document-api
+  template:
+    metadata:
+      labels:
+        app: document-api
+    spec:
+      containers:
+        - name: api
+          image: document-api:latest
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: document-api
+spec:
+  selector:
+    app: document-api
+  ports:
+    - port: 80
+      targetPort: 8000
